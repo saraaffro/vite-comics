@@ -13,13 +13,13 @@ export default {
 </script>
 
 <template>
-  <div class="container">
-    <AppHeader />
-    <AppMain />
-    <AppFooter />
-  </div>
+  <AppHeader />
+  <AppMain />
+  <AppFooter />
 </template>
 
 <style lang="scss">
-@import "src/styles/general.scss";
+@use './styles/partials/mixins' as *;
+@use './styles/general.scss' as *;
+@use './styles/partials/variables' as *;
 </style>
