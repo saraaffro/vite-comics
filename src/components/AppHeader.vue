@@ -40,21 +40,19 @@ header {
         height: 100%;
 
         .logo-container {
-            max-width: 80px;
+            width: 55px;
 
             img {
-                max-width: 100%;
+                width: 100%;
             }
         }
 
         ul {
-            list-style-type: none;
             @include flex;
 
 
             li a {
                 color: black;
-                text-decoration: none;
                 padding: 20px 10px;
 
                 &:hover,
