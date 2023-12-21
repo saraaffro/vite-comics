@@ -1,6 +1,52 @@
 <script>
 export default {
-    name: "AppHeader"
+    name: "AppHeader",
+    data() {
+        return {
+            links: [
+                {
+                    text: "CHARACTERS",
+                    status: false,
+                },
+                {
+                    text: "COMICS",
+                    status: true,
+                },
+                {
+                    text: "MOVIES",
+                    status: false,
+                },
+                {
+                    text: "TV",
+                    status: false,
+                },
+                {
+                    text: "GAMES",
+                    status: false,
+                },
+                {
+                    text: "COLLECTIBLES",
+                    status: false,
+                },
+                {
+                    text: "VIDEOS",
+                    status: false,
+                },
+                {
+                    text: "FANS",
+                    status: false,
+                },
+                {
+                    text: "NEWS",
+                    status: false,
+                },
+                {
+                    text: "SHOP",
+                    status: false,
+                },
+            ]
+        }
+    }
 }
 </script>
 
@@ -11,16 +57,7 @@ export default {
                 <img src="../../public/img/dc-logo.png" alt="logo">
             </div>
             <ul>
-                <li><a href="#">testo</a></li>
-                <li><a href="#">testo</a></li>
-                <li><a href="#">testo</a></li>
-                <li><a href="#">testo</a></li>
-                <li><a href="#">testo</a></li>
-                <li><a href="#">testo</a></li>
-                <li><a href="#">testo</a></li>
-                <li><a href="#">testo</a></li>
-                <li><a href="#">testo</a></li>
-                <li><a href="#">testo</a></li>
+                <li v-for="link in  links "><a :class="link.status ? 'active' : ''" href="#">{{ link.text }}</a></li>
             </ul>
         </div>
     </header>
@@ -53,7 +90,8 @@ header {
 
             li a {
                 color: black;
-                padding: 20px 10px;
+                padding: 31px 7px;
+                font-size: 10px;
 
                 &:hover,
                 &.active {

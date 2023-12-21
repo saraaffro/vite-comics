@@ -207,9 +207,6 @@ footer {
                 width: 100%;
             }
         }
-
-
-
     }
 
     .info-social {
