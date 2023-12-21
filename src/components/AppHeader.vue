@@ -91,7 +91,7 @@ header {
             li a {
                 color: black;
                 padding: 31px 7px;
-                font-size: 10px;
+                font-size: 12px;
 
                 &:hover,
                 &.active {

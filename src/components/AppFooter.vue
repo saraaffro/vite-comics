@@ -1,6 +1,32 @@
 <script>
 export default {
-    name: "AppFooter"
+    name: "AppFooter",
+    data() {
+        return {
+            features: [
+                {
+                    text: "DIGITAL COMICS",
+                    image: "../../public/img/buy-comics-digital-comics.png"
+                },
+                {
+                    text: "DC MERCHANDISE",
+                    image: "../../public/img/buy-comics-merchandise.png"
+                },
+                {
+                    text: "SUBSCRIPTION",
+                    image: "../../public/img/buy-comics-subscriptions.png"
+                },
+                {
+                    text: "COMIC SHOP LOCATION",
+                    image: "../../public/img/buy-comics-shop-locator.png"
+                },
+                {
+                    text: "DC POWER VISA",
+                    image: "../../public/img/buy-dc-power-visa.svg"
+                },
+            ]
+        }
+    }
 }
 </script>
 
@@ -8,44 +34,12 @@ export default {
     <footer>
         <section class="features">
             <div class="container">
-                <div class="feat">
+                <div v-for="feat in features" class="feat">
                     <div class="img-container">
-                        <img src="../../public/img/buy-comics-digital-comics.png" alt="digital comics">
+                        <img :src="feat.image" :alt="feat.text">
                     </div>
                     <div class="feat-text">
-                        testo
-                    </div>
-                </div>
-                <div class="feat">
-                    <div class="img-container">
-                        <img src="../../public/img/buy-comics-digital-comics.png" alt="digital comics">
-                    </div>
-                    <div class="feat-text">
-                        testo
-                    </div>
-                </div>
-                <div class="feat">
-                    <div class="img-container">
-                        <img src="../../public/img/buy-comics-digital-comics.png" alt="digital comics">
-                    </div>
-                    <div class="feat-text">
-                        testo
-                    </div>
-                </div>
-                <div class="feat">
-                    <div class="img-container">
-                        <img src="../../public/img/buy-comics-digital-comics.png" alt="digital comics">
-                    </div>
-                    <div class="feat-text">
-                        testo
-                    </div>
-                </div>
-                <div class="feat">
-                    <div class="img-container">
-                        <img src="../../public/img/buy-comics-digital-comics.png" alt="digital comics">
-                    </div>
-                    <div class="feat-text">
-                        testo
+                        {{ feat.text }}
                     </div>
                 </div>
             </div>
@@ -98,10 +92,6 @@ export default {
                         <li><a href="#">DC Power Visa</a></li>
                     </ul>
                 </div>
-
-                <div class="img-bg-container">
-                    <img src="../../public/img/dc-logo-bg.png" alt="logo">
-                </div>
             </div>
         </section>
         <section class="info-social">
@@ -139,7 +129,6 @@ export default {
 
 footer {
     .features {
-        min-height: 100px;
         background-color: $main-color;
         color: white;
 
@@ -153,8 +142,7 @@ footer {
 
         .feat {
             @include flex;
-            justify-content: flex-start;
-            flex-basis: calc(100% / 5);
+            flex-basis: 19%;
             padding: 40px 20px;
         }
 
@@ -168,6 +156,7 @@ footer {
 
         .feat-text {
             padding-left: 10px;
+            font-size: 11px;
         }
     }
 
@@ -180,31 +169,26 @@ footer {
             display: flex;
             justify-content: flex-start;
             padding: 40px 0;
+            background-image: url(../../public/img/dc-logo-bg.png);
+            background-position: right;
+            background-repeat: no-repeat;
         }
 
         .col {
             color: white;
-            width: 20%;
-            margin-right: 30px;
+            margin-right: 20px;
 
             h2 {
-                margin: 15px 0;
+                margin: 5px 0;
+                font-size: 18px;
             }
 
             li {
-                margin-bottom: 5px;
 
                 a {
                     color: #5b6263;
+                    font-size: 12px;
                 }
-            }
-        }
-
-        .img-bg-container {
-            flex-grow: 1;
-
-            img {
-                width: 100%;
             }
         }
     }
