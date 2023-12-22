@@ -57,7 +57,8 @@ export default {
                 <img src="../../public/img/dc-logo.png" alt="logo">
             </div>
             <ul>
-                <li v-for="link in  links "><a :class="link.status ? 'active' : ''" href="#">{{ link.text }}</a></li>
+                <li v-for="(link, i) in  links" :key="i"><a :class="link.status ? 'active' : ''" href="#">{{ link.text
+                }}</a></li>
             </ul>
         </div>
     </header>
@@ -71,6 +72,11 @@ export default {
 header {
     height: 80px;
     width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 500;
+    background-color: white;
 
     .container {
         @include flex;
