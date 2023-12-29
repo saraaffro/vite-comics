@@ -2,10 +2,7 @@
 export default {
     name: "ListItem",
     props: {
-        items: {
-            type: Object,
-            required: true,
-        }
+        items: Object,
     }
 }
 </script>
@@ -27,15 +24,33 @@ export default {
 @use '../styles/partials/variables' as *;
 
 .thumb {
-    flex-basis: calc(100% / 6);
+    flex-basis: 9vw;
+    height: 9vw;
     color: white;
+    overflow: hidden;
+    margin-bottom: 30px;
+    position: relative;
+
 
     .img-thumb-container {
         width: 100%;
+        position: relative;
+        padding-bottom: 100%;
 
         img {
             width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
         }
+    }
+
+    .thumb-title {
+        position: absolute;
+        bottom: 0;
+        left: 0;
     }
 }
 </style>

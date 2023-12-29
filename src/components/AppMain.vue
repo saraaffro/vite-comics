@@ -89,9 +89,16 @@ export default {
 
 <template>
     <main>
+        <div class="jumbotron">
+            <div class="container jumbo">
+                <div class="label">CURRENT SERIES</div>
+            </div>
+        </div>
         <div class="container">
             <ListItem v-for="(item, i) in thumbs" :key="i" :items="item" />
+            <a href="#" class="button">LOAD MORE</a>
         </div>
+
     </main>
 </template>
 
@@ -102,11 +109,52 @@ export default {
 
 main {
     background-color: #1c1c1c;
-    padding-top: 80px;
+
+    .jumbotron {
+        background-image: url(../../public/img/jumbotron.jpg);
+        height: 350px;
+        padding-top: 80px;
+        background-size: cover;
+        margin-bottom: 50px;
+        position: relative;
+
+        .container.jumbo {
+            position: absolute;
+            left: 20%;
+            bottom: -22px;
+            padding-bottom: 0;
+
+            .label {
+                background-color: $main-color;
+                padding: 10px;
+                color: white;
+                font-size: 20px;
+                font-weight: bold;
+            }
+        }
+    }
 
     .container {
         @include flex;
         flex-wrap: wrap;
+        position: relative;
+        padding-bottom: 50px;
+
+        .button {
+            background-color: $main-color;
+            padding: 10px;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-decoration: none;
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translate(-50%);
+        }
     }
+
+
 }
 </style>
