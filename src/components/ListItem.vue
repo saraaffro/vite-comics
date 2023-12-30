@@ -8,14 +8,16 @@ export default {
 </script>
 
 <template>
-    <div class="thumb">
-        <div class="img-thumb-container">
-            <img :src="items.thumb" :alt="items.series">
+    <a href="#">
+        <div class="thumb">
+            <div class="img-thumb-container">
+                <img :src="items.thumb" :alt="items.series">
+            </div>
+            <div class="thumb-title">
+                {{ items.series }}
+            </div>
         </div>
-        <div class="thumb-title">
-            {{ items.series }}
-        </div>
-    </div>
+    </a>
 </template>
 
 <style lang="scss" scoped>
@@ -24,33 +26,24 @@ export default {
 @use '../styles/partials/variables' as *;
 
 .thumb {
-    flex-basis: 9vw;
+    width: 9vw;
     height: 9vw;
     color: white;
-    overflow: hidden;
-    margin-bottom: 30px;
-    position: relative;
-
+    margin-bottom: 70px;
 
     .img-thumb-container {
-        width: 100%;
-        position: relative;
-        padding-bottom: 100%;
+        height: 100%;
 
         img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            position: absolute;
-            top: 0;
-            left: 0;
         }
     }
 
     .thumb-title {
-        position: absolute;
-        bottom: 0;
-        left: 0;
+        margin-top: 15px;
+        font-size: 10px;
+        text-transform: uppercase;
     }
 }
 </style>

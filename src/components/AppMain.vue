@@ -147,14 +147,13 @@ main {
             font-size: 12px;
             font-weight: bold;
             margin-bottom: 20px;
-            text-decoration: none;
             position: absolute;
             left: 50%;
             bottom: 0;
             transform: translate(-50%);
+            width: 150px;
+            text-align: center;
         }
     }
-
-
 }
 </style>

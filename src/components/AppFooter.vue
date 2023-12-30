@@ -142,7 +142,7 @@ footer {
 
         .feat {
             @include flex;
-            flex-basis: 19%;
+            flex-basis: 18%;
             padding: 40px 20px;
         }
 
@@ -172,6 +172,7 @@ footer {
             background-image: url(../../public/img/dc-logo-bg.png);
             background-position: right;
             background-repeat: no-repeat;
+            background-size: 50%;
         }
 
         .col {
@@ -202,7 +203,6 @@ footer {
 
             .button {
                 color: white;
-                text-decoration: none;
                 padding: 10px;
                 font-size: 18px;
                 border: 2px solid $main-color;
